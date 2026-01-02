@@ -53,7 +53,7 @@ app.post('/api/chat', async (req, res) => {
             },
             {
               headers: {
-                'Authorization': `Bearer ${'sk-a324e429a0f24a80b68c82e55e4343b0'}`,
+                'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
                 'Content-Type': 'application/json'
               },
               responseType: 'stream'
@@ -153,7 +153,7 @@ app.post('/api/chat', async (req, res) => {
             },
             {
               headers: {
-                'Authorization': `Bearer ${'sk-a324e429a0f24a80b68c82e55e4343b0'}`,
+                'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
                 'Content-Type': 'application/json'
               }
             }

@@ -25,76 +25,6 @@
 - OpenAI API (可选)
 - CORS支持
 
-## 前置要求
-
-**重要**：在开始之前，请确保您的系统已安装 Node.js 和 npm。
-
-### 检查是否已安装
-
-```bash
-node --version
-npm --version
-```
-
-如果命令未找到，请先安装 Node.js：
-
-- **macOS**: 推荐使用 Homebrew：`brew install node`
-- **详细安装指南**: 请查看 [安装指南.md](./安装指南.md)
-
-### 推荐版本
-- Node.js: v18.x 或 v20.x（LTS 版本）
-- npm: 会自动随 Node.js 一起安装
-
-## 安装步骤
-
-### 1. 安装依赖
-
-```bash
-npm run install-all
-```
-
-或者分别安装：
-
-```bash
-# 安装根目录依赖
-npm install
-
-# 安装服务器依赖
-cd server
-npm install
-
-# 安装客户端依赖
-cd ../client
-npm install
-```
-
-### 2. 配置环境变量（可选）
-
-如果需要使用真实的AI API，创建 `server/.env` 文件：
-
-```bash
-cd server
-```
-
-然后创建 `.env` 文件，添加你的API密钥：
-
-**推荐使用 DeepSeek API（支持流式响应）：**
-```
-DEEPSEEK_API_KEY=your_deepseek_api_key_here
-PORT=3001
-```
-
-**或者使用 OpenAI API：**
-```
-OPENAI_API_KEY=your_openai_api_key_here
-PORT=3001
-```
-
-**注意**：
-- 如果不配置API密钥，系统将使用模拟AI响应模式，仍然可以正常使用
-- DeepSeek API 支持流式响应，体验更好
-- 获取 DeepSeek API 密钥：https://platform.deepseek.com/
-
 ## 运行项目
 
 ### 开发模式（同时启动前后端）
@@ -118,34 +48,11 @@ npm run client
 - 前端：http://localhost:3000
 - 后端API：http://localhost:3001
 
-## 使用说明
-
-1. 打开浏览器访问 http://localhost:3000
-2. 在输入框中输入您的问题或消息
-3. 按 Enter 发送消息（Shift+Enter 换行）
-4. AI助手会实时回复您的问题
-5. 点击右上角的删除按钮可以清除对话历史
 
 ## API接口
 
 ### POST /api/chat
 发送消息给AI助手
-
-**请求体：**
-```json
-{
-  "message": "你好",
-  "userId": "user-123"
-}
-```
-
-**响应：**
-```json
-{
-  "response": "您好！我是您的AI助手...",
-  "timestamp": "2024-01-01T12:00:00.000Z"
-}
-```
 
 ### GET /api/history/:userId
 获取对话历史

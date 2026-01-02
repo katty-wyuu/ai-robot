@@ -1,0 +1,34 @@
+# 依赖
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# 环境变量
+.env
+server/.env
+client/.env
+
+# 构建输出
+client/dist/
+client/build/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
